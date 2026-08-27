@@ -2,7 +2,8 @@
 
 export const site = {
 	nome: 'Instituto IOIS',
-	nomeLongo: 'Instituto IOIS — Odontologia Integrativa',
+	nomeCompleto: 'Instituto Odontológico Iolanda Schroeder',
+	nomeLongo: 'IOIS — Instituto Odontológico Iolanda Schroeder',
 	dominio: 'https://iois.com.br',
 	descricao:
 		'Instituto de odontologia integrativa em Brasília. Todas as especialidades odontológicas, harmonização orofacial e formação continuada com a Dra. Iolanda Schroeder.',
@@ -23,7 +24,8 @@ export const site = {
 	horario: 'Segunda a sexta-feira, das 8h às 18h',
 	horarioCurto: 'Seg — Sex · 8h às 18h',
 	responsavel: 'Dra. Iolanda Schroeder',
-	cro: 'CRO-DF 0000', /* TODO: substituir pelo número real do CRO da responsável técnica */
+	croInstituto: 'CRO-DF 3319',
+	croResponsavel: 'CRO-DF 10295',
 	anos: 15,
 	pacientes: 2000
 };

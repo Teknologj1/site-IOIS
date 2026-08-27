@@ -5,11 +5,11 @@ import { icone } from './icones.mjs';
    Marca
    --------------------------------------------------------------------- */
 export const logo = (titulo = site.nome) => `
-<svg viewBox="0 0 200 76" role="img" aria-label="${titulo}">
-	<text class="logo-i" x="18" y="60" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="68" font-weight="500">I</text>
-	<ellipse class="logo-o" cx="76" cy="37" rx="27" ry="25" transform="rotate(-14 76 37)"/>
-	<text class="logo-i" x="134" y="60" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="68" font-weight="500">I</text>
-	<text class="logo-s" x="175" y="60" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="68" font-weight="500">S</text>
+<svg viewBox="8 0 123 76" role="img" aria-label="${titulo}">
+	<text class="logo-i" x="20" y="60" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="68" font-weight="500">I</text>
+	<ellipse class="logo-o" cx="53" cy="38" rx="19" ry="21.5" transform="rotate(-14 53 38)"/>
+	<text class="logo-i" x="87" y="60" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="68" font-weight="500">I</text>
+	<text class="logo-s" x="114" y="60" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="68" font-weight="500">S</text>
 </svg>`;
 
 /* ---------------------------------------------------------------------
@@ -55,6 +55,7 @@ const rodape = (especialidadesDestaque = []) => `
 			<div class="rodape-grid">
 				<div class="rodape-sobre">
 					<a class="marca" href="/" aria-label="${site.nome}">${logo()}</a>
+					<p class="rodape-razao">${site.nomeCompleto}</p>
 					<p>Odontologia integrativa em ${site.cidade}: cuidamos da saúde bucal reconhecendo sua conexão com o corpo inteiro — com todas as especialidades sob o mesmo teto.</p>
 					<div class="redes">
 						<a href="${site.instagram.url}" target="_blank" rel="noopener" aria-label="Instagram do ${site.nome}">${icone('instagram')}</a>
@@ -84,7 +85,7 @@ const rodape = (especialidadesDestaque = []) => `
 			</div>
 			<div class="rodape-base">
 				<p>© <span data-ano>2026</span> ${site.nome}. Todos os direitos reservados.</p>
-				<p>Responsável técnica: ${site.responsavel} · ${site.cro}</p>
+				<p>${site.nome} — ${site.croInstituto} · Responsável técnica: ${site.responsavel} — ${site.croResponsavel}</p>
 			</div>
 		</div>
 	</footer>
@@ -100,6 +101,8 @@ const dadosDaClinica = {
 	'@context': 'https://schema.org',
 	'@type': 'Dentist',
 	name: site.nome,
+	legalName: site.nomeCompleto,
+	alternateName: ['IOIS', site.nomeCompleto],
 	description: site.descricao,
 	url: site.dominio,
 	logo: `${site.dominio}/assets/img/logo-iois.svg`,

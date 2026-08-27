@@ -327,7 +327,7 @@ p { text-wrap: pretty; }
 .marca { display: inline-flex; align-items: center; gap: 0.85rem; }
 .marca svg { height: 2.1rem; width: auto; }
 .logo-i, .logo-s { fill: var(--roxo); transition: fill var(--transicao); }
-.logo-o { fill: none; stroke: #8b95a5; stroke-width: 7; transition: stroke var(--transicao); }
+.logo-o { fill: none; stroke: #8b95a5; stroke-width: 5.7; transition: stroke var(--transicao); }
 .logo-nome {
 	display: none;
 	font-size: var(--t-micro);
@@ -854,7 +854,7 @@ a.cartao { display: block; }
 /* --------------------------------------------------------------------------
    11. Rodapé e WhatsApp
    -------------------------------------------------------------------------- */
-.rodape { background: var(--ink); color: rgba(244, 241, 247, 0.66); padding-block: clamp(3.5rem, 7vw, 5.5rem) 2.5rem; }
+.rodape { background: var(--ink); color: rgba(244, 241, 247, 0.66); padding-block: clamp(3.5rem, 7vw, 5.5rem) 6rem; }
 .rodape-grid { display: grid; gap: clamp(2rem, 5vw, 3.5rem); grid-template-columns: repeat(auto-fit, minmax(min(13rem, 100%), 1fr)); }
 .rodape .marca svg { height: 2.4rem; }
 .rodape .logo-i, .rodape .logo-s { fill: #fff; }
@@ -862,6 +862,14 @@ a.cartao { display: block; }
 .rodape h4 { color: #fff; font-size: var(--t-micro); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 1.25rem; }
 .rodape a:hover { color: #fff; }
 .rodape ul { display: grid; gap: 0.7rem; font-size: var(--t-pequeno); }
+.rodape-razao {
+	margin-top: 1.35rem;
+	font-size: var(--t-micro);
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	color: var(--ouro-soft);
+}
+.rodape-sobre .rodape-razao + p { margin-top: 0.9rem; }
 .rodape-sobre p { font-size: var(--t-pequeno); margin-top: 1.5rem; max-width: 26rem; line-height: 1.75; }
 .rodape-base {
 	margin-top: clamp(2.5rem, 5vw, 4rem);

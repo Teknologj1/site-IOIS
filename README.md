@@ -116,13 +116,17 @@ Assim que os arquivos originais chegarem, basta substituir mantendo os nomes:
 | `assets/img/ig/post-*.jpg` | publicações do Instagram | vertical 4:5, ≥ 800 px |
 | `assets/img/logo-iois.svg` | logo | arquivo vetorial oficial (SVG ou AI) |
 
-Também precisam de confirmação:
+> **Como enviar os arquivos:** imagens coladas direto na conversa com o Claude nem sempre
+> chegam ao disco. O caminho que funciona é **anexar um `.zip`** com as fotos, ou deixá-las
+> numa pasta do **Google Drive** e informar o nome da pasta.
 
-- **CRO da responsável técnica** — hoje está `CRO-DF 0000` em `tools/data/site.mjs`.
-  A exigência é do Código de Ética Odontológica para publicidade.
-- Telefone, WhatsApp, e-mail, endereço completo com CEP e horário de atendimento.
+Ainda pendentes:
+
 - Lista de cursos e a formação da Dra. Iolanda (para as páginas *Cursos* e *Dra. Iolanda*).
 - Depoimentos reais com autorização por escrito dos pacientes.
+
+Já confirmados: contatos, CRO do instituto (CRO-DF 3319), CRO da responsável técnica
+(CRO-DF 10295) e a razão social **Instituto Odontológico Iolanda Schroeder**.
 
 ## Depois de publicar
 
