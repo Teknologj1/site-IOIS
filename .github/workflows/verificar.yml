@@ -1,0 +1,33 @@
+name: Verificar site
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Regenerar as páginas
+        run: node tools/build.mjs
+
+      - name: As páginas publicadas estão em dia com os modelos?
+        run: |
+          if ! git diff --quiet; then
+            echo "::error::As páginas HTML estão desatualizadas. Rode 'node tools/build.mjs' e faça commit do resultado."
+            git diff --stat
+            exit 1
+          fi
+
+      - name: Verificar links, imagens e SEO
+        run: node tools/verificar.mjs
+
+      - name: Conferir a sintaxe do PHP
+        run: php -l api/contato.php

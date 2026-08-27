@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /tools/
+Disallow: /obrigado.html
+
+Sitemap: https://iois.com.br/sitemap.xml

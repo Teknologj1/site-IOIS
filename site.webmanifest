@@ -1,0 +1,13 @@
+{
+	"name": "Instituto IOIS — Odontologia Integrativa",
+	"short_name": "Instituto IOIS",
+	"description": "Instituto de odontologia integrativa em Brasília. Todas as especialidades odontológicas, harmonização orofacial e formação continuada.",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#ffffff",
+	"theme_color": "#0b0a0f",
+	"lang": "pt-BR",
+	"icons": [
+		{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+	]
+}
