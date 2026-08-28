@@ -140,7 +140,7 @@ export const home = () => `
 	<div class="wrap grid cols-2" style="align-items:center">
 		<div class="retrato-moldura revelar" style="max-width:26rem">
 			<figure class="retrato">
-				<img src="/assets/img/iolanda-retrato.jpg" width="520" height="693" alt="Dra. Iolanda Schroeder no Instituto IOIS" loading="lazy" decoding="async">
+				<img src="/assets/img/iolanda-retrato.jpg" width="1200" height="1500" alt="Dra. Iolanda Schroeder no Instituto IOIS" loading="lazy" decoding="async">
 			</figure>
 		</div>
 		<div class="revelar" style="--atraso:.1s">

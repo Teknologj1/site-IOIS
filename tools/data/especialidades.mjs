@@ -104,22 +104,6 @@ export const especialidades = [
 		]
 	},
 	{
-		slug: 'estomatologia',
-		nome: 'Estomatologia',
-		grupo: 'prevencao',
-		icone: 'microscopio',
-		resumo: 'Diagnóstico das lesões da boca — feridas que não cicatrizam, manchas e alterações de tecido que pedem investigação.',
-		destaque: false
-	},
-	{
-		slug: 'radiologia-e-imaginologia',
-		nome: 'Radiologia e imaginologia',
-		grupo: 'prevencao',
-		icone: 'raio',
-		resumo: 'Imagens digitais e tomografia para planejar cada caso com precisão milimétrica, e não com suposição.',
-		destaque: false
-	},
-	{
 		slug: 'odontogeriatria',
 		nome: 'Odontogeriatria',
 		grupo: 'prevencao',
@@ -139,6 +123,7 @@ export const especialidades = [
 	/* ------------------------------------------------------------ reabilitação */
 	{
 		slug: 'dentistica-e-estetica',
+		imagem: { arquivo: 'esp-dentistica.jpg', alt: 'Dra. Iolanda Schroeder no consultório do Instituto IOIS', largura: 1400, altura: 1050 },
 		nome: 'Dentística e estética',
 		grupo: 'reabilitacao',
 		icone: 'brilho',
@@ -212,6 +197,7 @@ export const especialidades = [
 	},
 	{
 		slug: 'implantodontia',
+		imagem: { arquivo: 'esp-implantodontia.jpg', alt: 'Dra. Iolanda Schroeder com um modelo de implante dentário', largura: 1400, altura: 1050 },
 		nome: 'Implantodontia',
 		grupo: 'reabilitacao',
 		icone: 'implante',
@@ -376,6 +362,7 @@ export const especialidades = [
 	/* ------------------------------------------------------------- integrativa */
 	{
 		slug: 'harmonizacao-orofacial',
+		imagem: { arquivo: 'esp-harmonizacao.jpg', alt: 'Aplicação de toxina botulínica no Instituto IOIS', largura: 1400, altura: 1050 },
 		nome: 'Harmonização orofacial',
 		grupo: 'integrativa',
 		icone: 'coracao',

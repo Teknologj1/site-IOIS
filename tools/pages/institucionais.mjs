@@ -110,12 +110,28 @@ ${capa({
 			<p class="mt-2"><a class="btn btn-ouro" href="${site.endereco.mapa}" target="_blank" rel="noopener">${icone('local')} Ver no mapa</a></p>
 		</div>
 		<div class="moldura-img revelar" style="--atraso:.1s">
-			<img src="/assets/img/atendimento-detalhe.jpg" width="640" height="480" alt="Atendimento no Instituto IOIS" loading="lazy" decoding="async">
+			<img src="/assets/img/atendimento-detalhe.jpg" width="1080" height="810" alt="Equipe do Instituto IOIS durante um atendimento" loading="lazy" decoding="async">
 		</div>
 	</div>
 </section>
 
 <section class="secao">
+	<div class="wrap grid cols-2" style="align-items:center">
+		<div class="moldura-img revelar">
+			<img src="/assets/img/equipe-iois.jpg" width="1080" height="810" alt="Equipe do Instituto IOIS discutindo um caso clínico" loading="lazy" decoding="async">
+		</div>
+		<div class="revelar" style="--atraso:.1s">
+			<p class="eyebrow">Equipe</p>
+			<h2>Especialidades que conversam entre si.</h2>
+			<p class="lead mt-1">
+				O caso é discutido em conjunto antes de virar plano de tratamento. Periodontia, ortodontia, implante
+				e prótese decidem a sequência juntas — é isso que evita retrabalho e preserva estrutura dentária.
+			</p>
+		</div>
+	</div>
+</section>
+
+<section class="secao" style="background:var(--lilas-50)">
 	<div class="wrap centro">
 		<h2 class="revelar">Conheça o instituto de perto.</h2>
 		<p class="lead revelar mt-1" style="max-width:38rem;margin-inline:auto">Agende uma avaliação e entenda o seu caso por inteiro, sem compromisso de fechar tratamento na hora.</p>
@@ -137,7 +153,7 @@ ${capa({
 	<div class="wrap grid cols-2" style="align-items:center">
 		<div class="retrato-moldura revelar" style="max-width:26rem">
 			<figure class="retrato">
-				<img src="/assets/img/iolanda-retrato.jpg" width="520" height="693" alt="Dra. Iolanda Schroeder" loading="lazy" decoding="async">
+				<img src="/assets/img/iolanda-pagina.jpg" width="1200" height="1500" alt="Dra. Iolanda Schroeder, responsável técnica do Instituto IOIS" loading="lazy" decoding="async">
 			</figure>
 		</div>
 		<div class="revelar" style="--atraso:.08s">
@@ -198,8 +214,8 @@ ${capa({
 			</p>
 			<p class="mt-2"><a class="btn btn-primario" href="/cursos.html">Conhecer os cursos ${icone('seta')}</a></p>
 		</div>
-		<div class="moldura-img revelar" style="--atraso:.08s;max-width:20rem;margin-inline:auto">
-			<img src="/assets/img/iolanda-clinica.jpg" width="292" height="520" alt="Dra. Iolanda Schroeder em atendimento no Instituto IOIS" loading="lazy" decoding="async" style="width:100%">
+		<div class="moldura-img revelar" style="--atraso:.08s;max-width:26rem;margin-inline:auto">
+			<img src="/assets/img/iolanda-estudio.jpg" width="900" height="1125" alt="Dra. Iolanda Schroeder" loading="lazy" decoding="async" style="width:100%">
 		</div>
 	</div>
 </section>

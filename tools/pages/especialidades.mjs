@@ -68,6 +68,16 @@ ${capa({
 	migalhas: [{ rotulo: 'Especialidades', href: '/especialidades.html' }, { rotulo: e.nome }]
 })}
 
+${e.imagem
+	? `<section class="secao-topo">
+	<div class="wrap">
+		<figure class="moldura-img revelar" style="max-width:56rem;margin-inline:auto">
+			<img src="/assets/img/${e.imagem.arquivo}" width="${e.imagem.largura}" height="${e.imagem.altura}" alt="${e.imagem.alt}" loading="lazy" decoding="async">
+		</figure>
+	</div>
+</section>`
+	: ''}
+
 <section class="secao">
 	<div class="wrap grid cols-2" style="align-items:start">
 		<div class="revelar">
