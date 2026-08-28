@@ -17,11 +17,11 @@ ${capa({
 			<p class="eyebrow">Onde estamos</p>
 			<h2>Instituto IOIS</h2>
 			<ul class="lista-linhas mt-2">
-				<li><span class="rotulo">Endereço</span> <a href="${site.endereco.mapa}" target="_blank" rel="noopener" style="text-align:right">${site.endereco.linha}<br>${site.endereco.bairro} · ${site.endereco.cidade}/${site.endereco.uf}</a></li>
+				<li><span class="rotulo">Endereço</span> <a href="${site.endereco.mapa}" target="_blank" rel="noopener">${site.endereco.linha}<br>${site.endereco.bairro} · ${site.endereco.cidade}/${site.endereco.uf}</a></li>
 				<li><span class="rotulo">WhatsApp</span> <a href="https://wa.me/${site.whatsapp.numero}" target="_blank" rel="noopener">${site.whatsapp.exibicao}</a></li>
 				<li><span class="rotulo">Telefone</span> <a href="tel:+${site.telefone.numero}">${site.telefone.exibicao}</a></li>
 				<li><span class="rotulo">E-mail</span> <a href="mailto:${site.email}">${site.email}</a></li>
-				<li><span class="rotulo">Horário</span> <span style="text-align:right">${site.horario}</span></li>
+				<li><span class="rotulo">Horário</span> <span>${site.horario}</span></li>
 				<li><span class="rotulo">Instagram</span> <a href="${site.instagram.url}" target="_blank" rel="noopener">${site.instagram.usuario}</a></li>
 			</ul>
 			<div class="hero-ctas" style="margin-top:2rem">

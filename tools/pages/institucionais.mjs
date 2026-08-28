@@ -1,6 +1,7 @@
 import { site, zapPadrao } from '../data/site.mjs';
 import { especialidades } from '../data/especialidades.mjs';
 import { icone } from '../lib/icones.mjs';
+import { foto } from '../lib/layout.mjs';
 
 const capa = ({ eyebrow, titulo, lead, migalhas = [] }) => `
 <section class="hero-interno grao">
@@ -110,7 +111,7 @@ ${capa({
 			<p class="mt-2"><a class="btn btn-ouro" href="${site.endereco.mapa}" target="_blank" rel="noopener">${icone('local')} Ver no mapa</a></p>
 		</div>
 		<div class="moldura-img revelar" style="--atraso:.1s">
-			<img src="/assets/img/atendimento-detalhe.jpg" width="1080" height="810" alt="Equipe do Instituto IOIS durante um atendimento" loading="lazy" decoding="async">
+			\${foto({ arquivo: 'atendimento-detalhe.jpg', alt: 'Equipe do Instituto IOIS durante um atendimento', largura: 1080, altura: 810, sizes: '(max-width: 62rem) 92vw, 34rem' })}
 		</div>
 	</div>
 </section>
@@ -118,7 +119,7 @@ ${capa({
 <section class="secao">
 	<div class="wrap grid cols-2" style="align-items:center">
 		<div class="moldura-img revelar">
-			<img src="/assets/img/equipe-iois.jpg" width="1080" height="810" alt="Equipe do Instituto IOIS discutindo um caso clínico" loading="lazy" decoding="async">
+			\${foto({ arquivo: 'equipe-iois.jpg', alt: 'Equipe do Instituto IOIS discutindo um caso clínico', largura: 1080, altura: 810, sizes: '(max-width: 62rem) 92vw, 34rem' })}
 		</div>
 		<div class="revelar" style="--atraso:.1s">
 			<p class="eyebrow">Equipe</p>
@@ -153,7 +154,7 @@ ${capa({
 	<div class="wrap grid cols-2" style="align-items:center">
 		<div class="retrato-moldura revelar" style="max-width:26rem">
 			<figure class="retrato">
-				<img src="/assets/img/iolanda-pagina.jpg" width="1200" height="1500" alt="Dra. Iolanda Schroeder, responsável técnica do Instituto IOIS" loading="lazy" decoding="async">
+				\${foto({ arquivo: 'iolanda-pagina.jpg', alt: 'Dra. Iolanda Schroeder, responsável técnica do Instituto IOIS', largura: 1200, altura: 1500, sizes: '(max-width: 62rem) 92vw, 26rem' })}
 			</figure>
 		</div>
 		<div class="revelar" style="--atraso:.08s">
@@ -218,7 +219,7 @@ ${capa({
 			<p class="mt-2"><a class="btn btn-primario" href="/cursos.html">Conhecer os cursos ${icone('seta')}</a></p>
 		</div>
 		<div class="moldura-img revelar" style="--atraso:.08s;max-width:26rem;margin-inline:auto">
-			<img src="/assets/img/iolanda-estudio.jpg" width="900" height="1125" alt="Dra. Iolanda Schroeder" loading="lazy" decoding="async" style="width:100%">
+			\${foto({ arquivo: 'iolanda-estudio.jpg', alt: 'Dra. Iolanda Schroeder', largura: 900, altura: 1125, sizes: '(max-width: 62rem) 92vw, 26rem', estilo: 'width:100%' })}
 		</div>
 	</div>
 </section>

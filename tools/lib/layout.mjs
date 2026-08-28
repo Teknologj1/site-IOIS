@@ -5,9 +5,37 @@ import { icone } from './icones.mjs';
    Marca
    --------------------------------------------------------------------- */
 export const logo = (titulo = site.nome, altura = 38) => {
-	const larg = Math.round((altura * 561) / 207); /* proporção do letreiro oficial */
+	const larg = Math.round((altura * 437) / 183); /* proporção do letreiro oficial */
 	return `<img class="logo-marca" src="/assets/img/letreiro-iois.png" alt="${titulo}" width="${larg}" height="${altura}">
 				<img class="logo-marca logo-claro" src="/assets/img/letreiro-iois-claro.png" alt="" aria-hidden="true" width="${larg}" height="${altura}">`;
+};
+
+/* ---------------------------------------------------------------------
+   Foto com srcset — as larguras extras vêm de tools/gerar-variantes.mjs
+   --------------------------------------------------------------------- */
+export const foto = ({
+	arquivo,
+	alt,
+	largura,
+	altura,
+	sizes = '100vw',
+	prioridade = false,
+	classe = '',
+	estilo = ''
+}) => {
+	const base = `/assets/img/${arquivo}`;
+	const semExt = base.replace(/\.jpg$/i, '');
+	const conjunto = [480, 900]
+		.filter((l) => l < largura * 0.91)
+		.map((l) => `${semExt}-${l}.jpg ${l}w`)
+		.concat(`${base} ${largura}w`)
+		.join(', ');
+	return `<img src="${base}" srcset="${conjunto}" sizes="${sizes}"`
+		+ ` width="${largura}" height="${altura}" alt="${alt}"`
+		+ (classe ? ` class="${classe}"` : '')
+		+ (estilo ? ` style="${estilo}"` : '')
+		+ (prioridade ? ' fetchpriority="high" decoding="async"' : ' loading="lazy" decoding="async"')
+		+ '>';
 };
 
 /* ---------------------------------------------------------------------

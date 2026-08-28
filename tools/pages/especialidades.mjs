@@ -1,6 +1,7 @@
 import { site, zapPadrao } from '../data/site.mjs';
 import { especialidades, grupos, porGrupo } from '../data/especialidades.mjs';
 import { icone } from '../lib/icones.mjs';
+import { foto } from '../lib/layout.mjs';
 import { capa } from './institucionais.mjs';
 
 /* ------------------------------------------------------------------ ÍNDICE */
@@ -72,7 +73,7 @@ ${e.imagem
 	? `<section class="secao-topo">
 	<div class="wrap">
 		<figure class="moldura-img revelar" style="max-width:56rem;margin-inline:auto">
-			<img src="/assets/img/${e.imagem.arquivo}" width="${e.imagem.largura}" height="${e.imagem.altura}" alt="${e.imagem.alt}" loading="lazy" decoding="async">
+			\${foto({ ...e.imagem, sizes: '(max-width: 62rem) 92vw, 56rem' })}
 		</figure>
 	</div>
 </section>`

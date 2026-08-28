@@ -969,3 +969,112 @@ details.cartao summary::after {
 details.cartao[open] summary::after { transform: rotate(-135deg); top: 0.7rem; }
 details.cartao:hover { transform: none; }
 details.cartao p { color: var(--texto-suave); font-size: var(--t-pequeno); }
+
+/* ==========================================================================
+   15. Celular — layout compacto até 40rem
+   O site é desenhado no desktop; aqui as grades de uma coluna são refeitas
+   para caber em menos rolagem, sem tirar nada do conteúdo servido.
+   ========================================================================== */
+
+/* Alinhamento das linhas rótulo/valor (era inline nos modelos) */
+.lista-linhas li > :last-child { text-align: right; }
+
+@media (max-width: 40rem) {
+	:root {
+		--secao-y: clamp(3rem, 7vw, 4rem);
+		--t-display: clamp(2.4rem, 1.2rem + 5vw, 3.2rem);
+	}
+
+	/* --- Cartões com texto viram linhas horizontais: o ícone deixa de
+	       ocupar uma faixa inteira acima do título. --- */
+	.grid.cols-3 > .cartao,
+	.grid.cols-4 > .cartao {
+		display: grid;
+		grid-template-columns: 2.6rem 1fr;
+		column-gap: 1rem;
+		row-gap: 0.35rem;
+		align-content: start;
+		padding: 1.15rem 1.25rem;
+	}
+	.grid.cols-3 > .cartao > .icone,
+	.grid.cols-4 > .cartao > .icone,
+	.grid.cols-3 > .cartao > .numero-ordem,
+	.grid.cols-4 > .cartao > .numero-ordem {
+		grid-column: 1;
+		grid-row: 1 / span 8;
+		margin: 0;
+		width: 2.6rem;
+		height: 2.6rem;
+	}
+	.grid.cols-3 > .cartao > .numero-ordem,
+	.grid.cols-4 > .cartao > .numero-ordem {
+		font-size: 2rem;
+		line-height: 1;
+		height: auto;
+	}
+	.grid.cols-3 > .cartao > *:not(.icone):not(.numero-ordem),
+	.grid.cols-4 > .cartao > *:not(.icone):not(.numero-ordem) { grid-column: 2; }
+	.grid.cols-3 > .cartao .link-seta,
+	.grid.cols-4 > .cartao .link-seta { margin-top: 0.6rem; }
+
+	/* --- Home: as especialidades viram um mosaico de dois toques por linha.
+	       A descrição completa fica na página de especialidades. --- */
+	.grade-especialidades {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 0.7rem;
+	}
+	.grid.cols-4.grade-especialidades > .cartao {
+		display: flex;
+		flex-direction: column;
+		padding: 1.05rem 0.95rem 1.15rem;
+		text-align: left;
+	}
+	.grade-especialidades .cartao > .icone {
+		width: 2.4rem;
+		height: 2.4rem;
+		margin-bottom: 0.9rem;
+		grid-row: auto;
+	}
+	.grade-especialidades .cartao h3 { font-size: 1.02rem; line-height: 1.2; }
+	.grade-especialidades .cartao p,
+	.grade-especialidades .cartao .link-seta { display: none; }
+
+	/* --- Imagens em duas colunas: aqui o espaço não atrapalha a leitura --- */
+	.casos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.7rem; }
+
+	/* --- Números do hero: grade em vez de linha apertada --- */
+	.hero-selos {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1.25rem;
+	}
+	.hero-selos strong { font-size: 1.75rem; }
+
+	/* --- Rótulo acima do valor, tudo alinhado à esquerda --- */
+	.lista-linhas li {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.3rem;
+		padding-block: 0.95rem;
+	}
+	.lista-linhas li > :last-child { text-align: left; }
+
+	/* --- Rodapé em duas colunas --- */
+	.rodape-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+	.rodape-sobre { grid-column: 1 / -1; }
+	.rodape ul { gap: 0.85rem; }
+
+	/* --- Cabeçalhos de seção um pouco mais justos --- */
+	.cabecalho-secao { margin-bottom: 2.25rem; }
+	.retrato-moldura::before { display: none; }
+}
+
+/* Campos com 16px no celular: abaixo disso o Safari do iOS dá zoom ao focar */
+@media (max-width: 40rem) {
+	.campo input,
+	.campo textarea,
+	.campo select { font-size: 1rem; padding: 0.9rem 1rem; }
+	.campo textarea { min-height: 7rem; }
+	/* o botão flutuante do WhatsApp não pode cobrir o fim do formulário */
+	#form-contato { padding-bottom: 3.5rem; }
+}

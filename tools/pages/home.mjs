@@ -1,6 +1,7 @@
 import { site, zapPadrao } from '../data/site.mjs';
 import { especialidades, destaques } from '../data/especialidades.mjs';
 import { icone } from '../lib/icones.mjs';
+import { foto } from '../lib/layout.mjs';
 
 const pilares = [
 	{
@@ -51,7 +52,13 @@ export const home = () => `
 		</div>
 		<div class="retrato-moldura revelar" style="--atraso:.2s">
 			<figure class="retrato">
-				<img src="/assets/img/iolanda-hero.jpg" width="1400" height="1867" alt="Dra. Iolanda Schroeder, responsável técnica do Instituto IOIS" fetchpriority="high" decoding="async">
+				${foto({
+					arquivo: 'iolanda-hero.jpg',
+					alt: 'Dra. Iolanda Schroeder, responsável técnica do Instituto IOIS',
+					largura: 1400, altura: 1867,
+					sizes: '(max-width: 62rem) 92vw, 30rem',
+					prioridade: true
+				})}
 			</figure>
 			<div class="cartao-flutuante cartao-baixo-esq">
 				${icone('formatura')}
@@ -110,7 +117,7 @@ export const home = () => `
 				acompanhado aqui — com as equipes conversando entre si.
 			</p>
 		</div>
-		<div class="grid cols-4">
+		<div class="grid cols-4 grade-especialidades">
 			${destaques
 				.slice(0, 8)
 				.map(
@@ -140,7 +147,12 @@ export const home = () => `
 	<div class="wrap grid cols-2" style="align-items:center">
 		<div class="retrato-moldura revelar" style="max-width:26rem">
 			<figure class="retrato">
-				<img src="/assets/img/iolanda-retrato.jpg" width="1200" height="1500" alt="Dra. Iolanda Schroeder no Instituto IOIS" loading="lazy" decoding="async">
+				${foto({
+					arquivo: 'iolanda-retrato.jpg',
+					alt: 'Dra. Iolanda Schroeder no Instituto IOIS',
+					largura: 1200, altura: 1500,
+					sizes: '(max-width: 62rem) 92vw, 26rem'
+				})}
 			</figure>
 		</div>
 		<div class="revelar" style="--atraso:.1s">
@@ -269,7 +281,7 @@ export const home = () => `
 			</div>
 		</div>
 		<ul class="lista-linhas revelar" style="--atraso:.1s">
-			<li><span class="rotulo">Endereço</span> <a href="${site.endereco.mapa}" target="_blank" rel="noopener" style="text-align:right">${site.endereco.linha}<br>${site.endereco.bairro} · ${site.endereco.cidade}/${site.endereco.uf}</a></li>
+			<li><span class="rotulo">Endereço</span> <a href="${site.endereco.mapa}" target="_blank" rel="noopener">${site.endereco.linha}<br>${site.endereco.bairro} · ${site.endereco.cidade}/${site.endereco.uf}</a></li>
 			<li><span class="rotulo">Telefone</span> <a href="tel:+${site.telefone.numero}">${site.telefone.exibicao}</a></li>
 			<li><span class="rotulo">WhatsApp</span> <a href="https://wa.me/${site.whatsapp.numero}" target="_blank" rel="noopener">${site.whatsapp.exibicao}</a></li>
 			<li><span class="rotulo">E-mail</span> <a href="mailto:${site.email}">${site.email}</a></li>

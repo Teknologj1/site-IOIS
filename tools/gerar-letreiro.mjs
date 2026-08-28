@@ -1,6 +1,8 @@
-/* Extrai o letreiro "IOIS" do arquivo oficial da marca e aplica as cores da
-   versão usada no site: I, I e S em roxo, o O em cinza. As letras são as do
-   próprio arquivo original — nada é redesenhado, só recortado e colorido.
+/* Prepara o letreiro IOIS a partir do arquivo oficial enviado pela cliente
+   (assets/img/letreiro-iois-original.png). Não redesenha nada: recorta a
+   margem vazia, reduz para a maior largura usada no site e gera a variante
+   para fundo escuro (letras brancas, O lilás) — o roxo original teria
+   contraste de ~2:1 sobre o preto.
 
    Uso: node tools/gerar-letreiro.mjs */
 
@@ -11,18 +13,18 @@ import { fileURLToPath } from 'node:url';
 
 const raiz = join(dirname(fileURLToPath(import.meta.url)), '..');
 const origem = 'data:image/png;base64,'
-	+ readFileSync(join(raiz, 'assets/img/logo-iois.png')).toString('base64');
-
-const ROXO = [107, 46, 143];   /* letras I, I e S */
-const CINZA = [139, 149, 165]; /* o O */
-const BRANCO = [255, 255, 255];
-const LILAS = [201, 166, 228];
+	+ readFileSync(join(raiz, 'assets/img/letreiro-iois-original.png')).toString('base64');
 
 const navegador = await chromium.launch();
 const p = await navegador.newPage();
 await p.setContent('<canvas>');
 
-const saida = await p.evaluate(async ({ url, ROXO, CINZA, BRANCO, LILAS }) => {
+const saida = await p.evaluate(async (url) => {
+	/* O letreiro aparece no máximo a 46 px de altura (rodapé); 380 px de
+	   largura cobre telas de 3× e mantém o arquivo leve — ele é carregado
+	   em todas as páginas. */
+	const LARGURA_MAX = 380;
+
 	const img = new Image();
 	await new Promise((ok, e) => { img.onload = ok; img.onerror = e; img.src = url; });
 	const c = document.createElement('canvas');
@@ -31,84 +33,65 @@ const saida = await p.evaluate(async ({ url, ROXO, CINZA, BRANCO, LILAS }) => {
 	ctx.drawImage(img, 0, 0);
 	const dados = ctx.getImageData(0, 0, c.width, c.height);
 	const px = dados.data;
-	const alfa = (x, y) => px[(y * c.width + x) * 4 + 3];
 
-	/* 1. Descarta o símbolo do dente: primeira coluna vazia depois dele */
-	const colunaVazia = (x, y0 = 0, y1 = c.height - 1) => {
-		for (let y = y0; y <= y1; y++) if (alfa(x, y) > 10) return false;
-		return true;
-	};
-	let inicio = 0;
-	for (let x = Math.round(c.width * 0.1); x < c.width; x++) {
-		if (colunaVazia(x)) { while (colunaVazia(x) && x < c.width) x++; inicio = x; break; }
-	}
-
-	/* 2. Separa a linha do "IOIS" das duas linhas de apoio abaixo */
-	const linhaVazia = (y) => {
-		for (let x = inicio; x < c.width; x++) if (alfa(x, y) > 10) return false;
-		return true;
-	};
-	let topo = 0, base = 0;
-	for (let y = 0; y < c.height; y++) if (!linhaVazia(y)) { topo = y; break; }
-	for (let y = topo; y < c.height; y++) if (linhaVazia(y)) { base = y - 1; break; }
-
-	/* 3. Divide o bloco em letras pelas colunas vazias */
-	const letras = [];
-	let dentro = false, l0 = 0;
-	for (let x = inicio; x < c.width; x++) {
-		const cheia = !colunaVazia(x, topo, base);
-		if (cheia && !dentro) { dentro = true; l0 = x; }
-		else if (!cheia && dentro) { dentro = false; letras.push([l0, x - 1]); }
-	}
-	if (dentro) letras.push([l0, c.width - 1]);
-
-	/* 4. Pinta: a segunda letra (o O) fica cinza, as demais roxas.
-	      O alfa do arquivo é parcial (as letras originais são cinza médio),
-	      então é normalizado para que o miolo fique sólido e só as bordas
-	      continuem suaves. */
-	let alfaMax = 0;
-	for (let y = topo; y <= base; y++) {
-		for (let x = inicio; x < c.width; x++) {
-			const a = px[(y * c.width + x) * 4 + 3];
-			if (a > alfaMax) alfaMax = a;
-		}
-	}
-	const ganho = alfaMax > 0 ? 255 / alfaMax : 1;
-	const pintar = (corLetra, corO) => {
-		const saida = ctx.createImageData(dados);
-		const q = saida.data;
-		for (let y = topo; y <= base; y++) {
-			for (let x = inicio; x < c.width; x++) {
-				const i = (y * c.width + x) * 4;
-				if (px[i + 3] === 0) continue;
-				const indice = letras.findIndex(([a, b]) => x >= a && x <= b);
-				const cor = indice === 1 ? corO : corLetra;
-				q[i] = cor[0]; q[i + 1] = cor[1]; q[i + 2] = cor[2];
-				q[i + 3] = Math.min(255, Math.round(px[i + 3] * ganho));
+	/* Recorte pelo menor retângulo com pixels visíveis */
+	let x0 = c.width, y0 = c.height, x1 = -1, y1 = -1;
+	for (let y = 0; y < c.height; y++) {
+		for (let x = 0; x < c.width; x++) {
+			if (px[(y * c.width + x) * 4 + 3] > 12) {
+				if (x < x0) x0 = x; if (x > x1) x1 = x;
+				if (y < y0) y0 = y; if (y > y1) y1 = y;
 			}
 		}
-		const larg = c.width - inicio, alt = base - topo + 1;
+	}
+	const larg = x1 - x0 + 1, alt = y1 - y0 + 1;
+
+	const exportar = (fonte) => {
+		const corte = document.createElement('canvas');
+		corte.width = larg; corte.height = alt;
+		corte.getContext('2d').putImageData(fonte, -x0, -y0);
+		if (larg <= LARGURA_MAX) return corte.toDataURL('image/png');
+		const escala = LARGURA_MAX / larg;
 		const d = document.createElement('canvas');
-		d.width = larg; d.height = alt;
-		d.getContext('2d').putImageData(saida, -inicio, -topo);
+		d.width = Math.round(larg * escala);
+		d.height = Math.round(alt * escala);
+		const c2 = d.getContext('2d');
+		c2.imageSmoothingEnabled = true;
+		c2.imageSmoothingQuality = 'high';
+		c2.drawImage(corte, 0, 0, d.width, d.height);
 		return d.toDataURL('image/png');
 	};
 
-	return {
-		escuro: pintar(ROXO, CINZA),
-		claro: pintar(BRANCO, LILAS),
-		letras: letras.length,
-		caixa: [inicio, topo, c.width - inicio, base - topo + 1]
-	};
-}, { url: origem, ROXO, CINZA, BRANCO, LILAS });
+	const original = exportar(dados);
+
+	/* Variante para fundo escuro: as letras roxas viram brancas e o O cinza
+	   vira lilás. A separação é por saturação, e o alfa é preservado. */
+	const claros = ctx.createImageData(dados);
+	const q = claros.data;
+	for (let i = 0; i < q.length; i += 4) {
+		const a = px[i + 3];
+		if (a === 0) { q[i + 3] = 0; continue; }
+		const r = px[i], g = px[i + 1], b = px[i + 2];
+		const max = Math.max(r, g, b), min = Math.min(r, g, b);
+		const satur = max === 0 ? 0 : (max - min) / max;
+		if (satur < 0.22) { q[i] = 201; q[i + 1] = 166; q[i + 2] = 228; }  /* o O cinza vira lilás */
+		else { q[i] = 255; q[i + 1] = 255; q[i + 2] = 255; }               /* as letras roxas viram brancas */
+		/* Degraus de 8 no alfa: imperceptível e deixa o PNG bem menor,
+		   já que a imagem tem só duas cores. */
+		q[i + 3] = a > 247 ? 255 : Math.round(a / 8) * 8;
+	}
+	const claro = exportar(claros);
+
+	return { original, claro, larg, alt, origem: [c.width, c.height] };
+}, origem);
 
 const gravar = (dataUrl, destino) => {
 	writeFileSync(join(raiz, destino), Buffer.from(dataUrl.split(',')[1], 'base64'));
 	console.log('gerado:', destino);
 };
 
-gravar(saida.escuro, 'assets/img/letreiro-iois.png');
+gravar(saida.original, 'assets/img/letreiro-iois.png');
 gravar(saida.claro, 'assets/img/letreiro-iois-claro.png');
-console.log(`letras encontradas: ${saida.letras} | recorte ${saida.caixa[2]}×${saida.caixa[3]}`);
+console.log(`origem ${saida.origem.join('×')} → arte ${saida.larg}×${saida.alt}`);
 
 await navegador.close();
