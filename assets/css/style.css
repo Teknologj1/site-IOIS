@@ -321,9 +321,9 @@ p { text-wrap: pretty; }
 .cabecalho.sobre-escuro:not(.fixo) .hamburguer span { background: #fff; }
 
 .marca { display: inline-flex; align-items: center; position: relative; }
-.logo-marca { width: auto; height: 3.4rem; transition: height var(--transicao); }
-.rodape .logo-marca { height: 3.6rem; }
-.gaveta .logo-marca { height: 3.2rem; }
+.logo-marca { width: auto; height: 2.35rem; transition: height var(--transicao); }
+.rodape .logo-marca { height: 2.9rem; }
+.gaveta .logo-marca { height: 2.2rem; }
 
 /* Sobre fundo escuro entra a versão clara; sobre fundo claro, a original. */
 .logo-claro { display: none; }
@@ -333,7 +333,7 @@ p { text-wrap: pretty; }
 .cabecalho.sobre-escuro:not(.fixo) .logo-claro,
 .gaveta .logo-claro,
 .rodape .logo-claro { display: block; }
-.cabecalho.fixo .logo-marca { height: 2.8rem; }
+.cabecalho.fixo .logo-marca { height: 2rem; }
 
 .menu { display: none; align-items: center; gap: clamp(1.25rem, 2.2vw, 2.25rem); }
 .menu a {
@@ -852,14 +852,6 @@ a.cartao { display: block; }
 .rodape h4 { color: #fff; font-size: var(--t-micro); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 1.25rem; }
 .rodape a:hover { color: #fff; }
 .rodape ul { display: grid; gap: 0.7rem; font-size: var(--t-pequeno); }
-.rodape-razao {
-	margin-top: 1.35rem;
-	font-size: var(--t-micro);
-	letter-spacing: 0.16em;
-	text-transform: uppercase;
-	color: var(--ouro-soft);
-}
-.rodape-sobre .rodape-razao + p { margin-top: 0.9rem; }
 .rodape-sobre p { font-size: var(--t-pequeno); margin-top: 1.5rem; max-width: 26rem; line-height: 1.75; }
 .rodape-base {
 	margin-top: clamp(2.5rem, 5vw, 4rem);

@@ -51,7 +51,7 @@ export const home = () => `
 		</div>
 		<div class="retrato-moldura revelar" style="--atraso:.2s">
 			<figure class="retrato">
-				<img src="/assets/img/iolanda-hero.jpg" width="520" height="693" alt="Dra. Iolanda Schroeder, responsável técnica do Instituto IOIS" fetchpriority="high" decoding="async">
+				<img src="/assets/img/iolanda-hero.jpg" width="1400" height="1867" alt="Dra. Iolanda Schroeder, responsável técnica do Instituto IOIS" fetchpriority="high" decoding="async">
 			</figure>
 			<div class="cartao-flutuante cartao-baixo-esq">
 				${icone('formatura')}

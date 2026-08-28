@@ -4,10 +4,10 @@ import { icone } from './icones.mjs';
 /* ---------------------------------------------------------------------
    Marca
    --------------------------------------------------------------------- */
-export const logo = (titulo = site.nome, altura = 46) => {
-	const larg = Math.round((altura * 1824) / 650); /* proporção da arte original */
-	return `<img class="logo-marca" src="/assets/img/logo-iois.png" alt="${titulo}" width="${larg}" height="${altura}">
-				<img class="logo-marca logo-claro" src="/assets/img/logo-iois-claro.png" alt="" aria-hidden="true" width="${larg}" height="${altura}">`;
+export const logo = (titulo = site.nome, altura = 38) => {
+	const larg = Math.round((altura * 561) / 207); /* proporção do letreiro oficial */
+	return `<img class="logo-marca" src="/assets/img/letreiro-iois.png" alt="${titulo}" width="${larg}" height="${altura}">
+				<img class="logo-marca logo-claro" src="/assets/img/letreiro-iois-claro.png" alt="" aria-hidden="true" width="${larg}" height="${altura}">`;
 };
 
 /* ---------------------------------------------------------------------
@@ -51,8 +51,7 @@ const rodape = (especialidadesDestaque = []) => `
 		<div class="wrap">
 			<div class="rodape-grid">
 				<div class="rodape-sobre">
-					<a class="marca" href="/" aria-label="${site.nome}">${logo(site.nome, 58)}</a>
-					<p class="rodape-razao">${site.nomeCompleto}</p>
+					<a class="marca" href="/" aria-label="${site.nome}">${logo(site.nome, 46)}</a>
 					<p>Odontologia integrativa em ${site.cidade}: cuidamos da saúde bucal reconhecendo sua conexão com o corpo inteiro — com todas as especialidades sob o mesmo teto.</p>
 					<div class="redes">
 						<a href="${site.instagram.url}" target="_blank" rel="noopener" aria-label="Instagram do ${site.nome}">${icone('instagram')}</a>
@@ -98,8 +97,7 @@ const dadosDaClinica = {
 	'@context': 'https://schema.org',
 	'@type': 'Dentist',
 	name: site.nome,
-	legalName: site.nomeCompleto,
-	alternateName: ['IOIS', site.nomeCompleto],
+	alternateName: 'IOIS',
 	description: site.descricao,
 	url: site.dominio,
 	logo: `${site.dominio}/assets/img/logo-iois.png`,

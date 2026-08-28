@@ -10,7 +10,7 @@ const raiz = join(dirname(fileURLToPath(import.meta.url)), '..');
 const dataUri = (rel) => 'data:image/png;base64,' + readFileSync(join(raiz, rel)).toString('base64');
 const fonte = (arq) => pathToFileURL(join(raiz, 'assets/fonts', arq)).href;
 
-const LOGO_CLARO = dataUri('assets/img/logo-iois-claro.png');
+const LOGO_CLARO = dataUri('assets/img/letreiro-iois-claro.png');
 const SIMBOLO = dataUri('assets/img/simbolo-iois.png');
 
 const fontes = `
@@ -24,7 +24,7 @@ const og = `<!doctype html><meta charset="utf-8"><style>${fontes}
 	.aura{position:absolute;border-radius:50%;filter:blur(90px)}
 	.a1{width:720px;height:720px;background:radial-gradient(circle,rgba(107,46,143,.9),transparent 65%);top:-280px;left:-200px}
 	.a2{width:560px;height:560px;background:radial-gradient(circle,rgba(201,166,228,.35),transparent 65%);bottom:-260px;right:-140px}
-	.marca{height:78px;width:auto;position:relative}
+	.marca{height:66px;width:auto;position:relative}
 	h1{font-family:'Cormorant Garamond',serif;font-size:76px;font-weight:400;line-height:1.05;letter-spacing:-.02em;position:relative;max-width:16ch}
 	.it{font-style:italic;background:linear-gradient(100deg,#c9a6e4 20%,#e4ce97);-webkit-background-clip:text;background-clip:text;color:transparent}
 	.base{display:flex;justify-content:space-between;align-items:flex-end;font-size:20px;color:rgba(255,255,255,.7);position:relative}

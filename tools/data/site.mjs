@@ -2,8 +2,7 @@
 
 export const site = {
 	nome: 'Instituto IOIS',
-	nomeCompleto: 'Instituto Odontológico Iolanda Schroeder',
-	nomeLongo: 'IOIS — Instituto Odontológico Iolanda Schroeder',
+	nomeLongo: 'Instituto IOIS — Odontologia Integrativa',
 	dominio: 'https://iois.com.br',
 	descricao:
 		'Instituto de odontologia integrativa em Brasília. Todas as especialidades odontológicas, harmonização orofacial e formação continuada com a Dra. Iolanda Schroeder.',
