@@ -64,7 +64,7 @@ const paginas = [
 			worksFor: { '@type': 'Dentist', name: site.nome },
 			url: `${site.dominio}/dra-iolanda.html`,
 			image: `${site.dominio}/assets/img/iolanda-retrato.jpg`,
-			sameAs: [site.instagram.url]
+			sameAs: [site.instagramIolanda.url, site.instagram.url]
 		}
 	},
 	{

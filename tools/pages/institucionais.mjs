@@ -169,7 +169,10 @@ ${capa({
 				cirurgiões-dentistas. Ensinar, para ela, é a forma mais honesta de se manter atualizada: obriga a
 				revisar, justificar e provar cada conduta.
 			</p>
-			<p class="mt-2"><a class="btn btn-ouro" href="${site.instagram.url}" target="_blank" rel="noopener">${icone('instagram')} ${site.instagram.usuario}</a></p>
+			<div class="hero-ctas" style="margin-top:2rem">
+				<a class="btn btn-ouro" href="${site.instagramIolanda.url}" target="_blank" rel="noopener">${icone('instagram')} ${site.instagramIolanda.usuario}</a>
+				<a class="btn btn-contorno" href="${site.instagram.url}" target="_blank" rel="noopener">${icone('instagram')} ${site.instagram.usuario}</a>
+			</div>
 		</div>
 	</div>
 </section>
@@ -288,8 +291,14 @@ ${capa({
 	<div class="wrap centro">
 		<p class="eyebrow revelar" style="justify-content:center">Conteúdo aberto</p>
 		<h2 class="revelar">Acompanhe também no Instagram.</h2>
-		<p class="lead revelar mt-1" style="max-width:36rem;margin-inline:auto">Casos, bastidores e conteúdo clínico publicados com regularidade em ${site.instagram.usuario}.</p>
-		<p class="mt-2 revelar"><a class="btn btn-ouro" href="${site.instagram.url}" target="_blank" rel="noopener">${icone('instagram')} Seguir ${site.instagram.usuario}</a></p>
+		<p class="lead revelar mt-1" style="max-width:38rem;margin-inline:auto">
+			Conteúdo clínico e a rotina da Dra. Iolanda em ${site.instagramIolanda.usuario}; casos e bastidores do
+			instituto em ${site.instagram.usuario}.
+		</p>
+		<div class="hero-ctas revelar" style="justify-content:center">
+			<a class="btn btn-primario" href="${site.instagramIolanda.url}" target="_blank" rel="noopener">${icone('instagram')} ${site.instagramIolanda.usuario}</a>
+			<a class="btn btn-contorno" href="${site.instagram.url}" target="_blank" rel="noopener">${icone('instagram')} ${site.instagram.usuario}</a>
+		</div>
 	</div>
 </section>
 `;

@@ -20,6 +20,7 @@ export const site = {
 	telefone: { numero: '556133269257', exibicao: '(61) 3326-9257' },
 	email: 'contato@iois.com.br',
 	instagram: { url: 'https://www.instagram.com/institutoiois', usuario: '@institutoiois' },
+	instagramIolanda: { url: 'https://www.instagram.com/draiolandaschroeder', usuario: '@draiolandaschroeder' },
 	horario: 'Segunda a sexta-feira, das 8h às 18h',
 	horarioCurto: 'Seg — Sex · 8h às 18h',
 	responsavel: 'Dra. Iolanda Schroeder',
