@@ -26,7 +26,7 @@ export const site = {
 	responsavel: 'Dra. Iolanda Schroeder',
 	croInstituto: 'CRO-DF 3319',
 	croResponsavel: 'CRO-DF 10295',
-	anos: 15,
+	anos: 16,
 	pacientes: 2000
 };
 

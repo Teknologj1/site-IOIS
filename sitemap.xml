@@ -33,6 +33,10 @@
 		<priority>0.7</priority>
 	</url>
 	<url>
+		<loc>https://iois.com.br/especialidades/frenectomia-a-laser.html</loc>
+		<priority>0.7</priority>
+	</url>
+	<url>
 		<loc>https://iois.com.br/especialidades/dentistica-e-estetica.html</loc>
 		<priority>0.7</priority>
 	</url>
@@ -62,6 +66,10 @@
 	</url>
 	<url>
 		<loc>https://iois.com.br/especialidades/dtm-e-dor-orofacial.html</loc>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://iois.com.br/especialidades/odontologia-miofuncional.html</loc>
 		<priority>0.7</priority>
 	</url>
 </urlset>

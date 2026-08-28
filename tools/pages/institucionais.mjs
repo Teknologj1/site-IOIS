@@ -24,6 +24,7 @@ const diferenciais = [
 	{ icone: 'microscopio', titulo: 'Diagnóstico antes da conduta', texto: 'Fotografia clínica, radiografia digital, tomografia e escaneamento quando o caso pede. Proposta de tratamento sem exame é chute com nome bonito.' },
 	{ icone: 'escudo', titulo: 'Biossegurança levada a sério', texto: 'Fluxo de esterilização com rastreabilidade, materiais de uso único e protocolos revisados — o que você não vê é o que mais importa.' },
 	{ icone: 'pessoas', titulo: 'Equipe que conversa entre si', texto: 'Periodontia, ortodontia, implante e prótese planejando o mesmo caso juntas, em vez de tratamentos paralelos que se atrapalham.' },
+	{ icone: 'lua', titulo: 'Sedação para quem tem medo', texto: 'Sedação inalatória com óxido nitroso, conduzida por profissional habilitada. Para quem adia o dentista há anos, é o que torna a consulta possível — desperta consciente, calmo e sem o efeito residual de um sedativo oral.' },
 	{ icone: 'relogio', titulo: 'Tempo de consulta real', texto: 'Agenda organizada para que ninguém seja atendido com pressa. É o que permite escutar, explicar e decidir com você.' },
 	{ icone: 'relatorio', titulo: 'Plano por escrito', texto: 'Você recebe etapas, prazos e valores de forma transparente, com as alternativas quando elas existem.' },
 	{ icone: 'coracao', titulo: 'Cuidado que continua', texto: 'Manutenção programada e canal aberto após o tratamento. O acompanhamento é parte do resultado, não cortesia.' }
@@ -106,6 +107,7 @@ ${capa({
 				<li>Consultórios equipados para clínica, cirurgia e reabilitação</li>
 				<li>Radiologia digital e fluxo de escaneamento intraoral</li>
 				<li>Central de esterilização com fluxo controlado</li>
+				<li>Sedação inalatória com óxido nitroso para atendimentos mais tranquilos</li>
 				<li>Localização central, com fácil acesso e estacionamento</li>
 			</ul>
 			<p class="mt-2"><a class="btn btn-ouro" href="${site.endereco.mapa}" target="_blank" rel="noopener">${icone('local')} Ver no mapa</a></p>
@@ -146,7 +148,7 @@ export const iolanda = () => `
 ${capa({
 	eyebrow: 'Responsável técnica',
 	titulo: 'Dra. Iolanda Schroeder',
-	lead: 'Cirurgiã-dentista, fundadora do Instituto IOIS e professora. Uma prática construída sobre estudo contínuo — o tipo de credibilidade que o paciente sente antes de entender.',
+	lead: `Cirurgiã-dentista há 16 anos, fundadora e diretora do Instituto IOIS, professora e palestrante. ${site.croResponsavel}.`,
 	migalhas: [{ rotulo: 'Dra. Iolanda' }]
 })}
 
@@ -161,9 +163,10 @@ ${capa({
 			<p class="eyebrow">Trajetória</p>
 			<h2>Quem estuda a vida inteira trata melhor.</h2>
 			<p class="lead mt-1">
-				A Dra. Iolanda fundou o IOIS com uma inquietação: a odontologia tradicional resolve dentes, mas
-				frequentemente perde o paciente de vista. Sua formação seguiu na direção oposta — do detalhe técnico
-				até a leitura do corpo inteiro.
+				São 16 anos de clínica dedicados à reabilitação oral e à saúde integrativa. A formação começou no
+				detalhe técnico — especialização em Prótese Dentária, implantodontia de alta performance — e seguiu
+				na direção do corpo inteiro: odontologia integrativa, extensão em Medicina Funcional Integrativa e
+				educação continuada na Harvard Medical School.
 			</p>
 			<p class="mt-2">
 				Hoje conduz o instituto, planeja casos complexos junto com as demais especialidades e ensina
@@ -179,20 +182,43 @@ ${capa({
 </section>
 
 <section class="secao" style="background:var(--lilas-50)">
-	<div class="wrap grid cols-2">
-		<div class="revelar">
-			<p class="eyebrow">Atuação</p>
-			<h2>O que ela conduz na clínica.</h2>
-			<p class="mt-1 texto-suave">Casos que exigem mais de uma especialidade conversando ao mesmo tempo.</p>
+	<div class="wrap">
+		<div class="cabecalho-secao revelar">
+			<p class="eyebrow">Formação e atuação</p>
+			<h2>O que sustenta cada conduta.</h2>
 		</div>
-		<ul class="lista-check revelar" style="--atraso:.08s">
-			<li>Planejamento integrado de reabilitações complexas</li>
-			<li>Odontologia integrativa: sono, respiração, DTM e postura</li>
-			<li>Harmonização orofacial integrada ao tratamento odontológico</li>
-			<li>Reabilitação estética com preservação de estrutura dentária</li>
-			<li>Coordenação clínica das especialidades do instituto</li>
-			<li>Docência, mentoria e formação de cirurgiões-dentistas</li>
-		</ul>
+		<div class="grid cols-3">
+			<article class="cartao revelar">
+				<span class="icone">${icone('formatura')}</span>
+				<h3>Formação</h3>
+				<ul class="lista-check mt-1">
+					<li>Especialista em Prótese Dentária</li>
+					<li>Formação e atuação em Odontologia Integrativa</li>
+					<li>Educação Continuada na Harvard Medical School (2019)</li>
+					<li>Extensão clínica em Medicina Funcional Integrativa</li>
+				</ul>
+			</article>
+			<article class="cartao revelar" style="--atraso:.06s">
+				<span class="icone">${icone('escudo')}</span>
+				<h3>Habilitações</h3>
+				<ul class="lista-check mt-1">
+					<li>Harmonização orofacial, toxina botulínica e preenchimento facial</li>
+					<li>Laserterapia e cirurgias com laser</li>
+					<li>Sedação inalatória com óxido nitroso</li>
+					<li>Frenectomia lingual e labial a laser</li>
+				</ul>
+			</article>
+			<article class="cartao revelar" style="--atraso:.12s">
+				<span class="icone">${icone('coracao')}</span>
+				<h3>Atuação clínica</h3>
+				<ul class="lista-check mt-1">
+					<li>Implantodontia com zircônia e reabilitações de alta performance</li>
+					<li>Odontopediatria preventiva e ortopedia funcional dos maxilares</li>
+					<li>Alinhadores invisíveis para crianças, adolescentes e adultos</li>
+					<li>Odontologia miofuncional e miofacial</li>
+				</ul>
+			</article>
+		</div>
 	</div>
 </section>
 
@@ -247,7 +273,9 @@ ${capa({
 			<h2>Aprender com quem está na cadeira todo dia.</h2>
 			<p class="lead">
 				Não é curso de palco. É a rotina de um instituto que trata casos complexos, aberta para colegas que
-				querem elevar o próprio padrão clínico.
+				querem elevar o próprio padrão clínico — conduzida por quem soma 16 anos de clínica, especialização
+				em Prótese Dentária, educação continuada na Harvard Medical School e habilitações em harmonização
+				orofacial, laserterapia e sedação.
 			</p>
 		</div>
 		<div class="grid cols-3">

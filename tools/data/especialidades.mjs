@@ -90,7 +90,8 @@ export const especialidades = [
 			'Prevenção de cárie e aplicação de flúor e selantes',
 			'Avaliação de respiração bucal e hábitos como chupeta e dedo',
 			'Traumatismos dentários',
-			'Acompanhamento do crescimento das arcadas'
+			'Acompanhamento do crescimento das arcadas',
+			'Ortopedia funcional dos maxilares, com expansores, durante o crescimento'
 		],
 		etapas: [
 			{ titulo: 'Acolhimento', texto: 'Conversa com a família, histórico de saúde e apresentação do consultório para a criança.' },
@@ -101,6 +102,43 @@ export const especialidades = [
 			{ p: 'Com que idade levar meu filho pela primeira vez?', r: 'A recomendação é a primeira consulta com a erupção do primeiro dentinho, por volta dos seis meses, ou no primeiro ano de vida.' },
 			{ p: 'Dente de leite com cárie precisa ser tratado?', r: 'Sim. Ele guarda espaço para o dente permanente, participa da mastigação e da fala, e a infecção pode atingir o germe do dente definitivo.' },
 			{ p: 'Meu filho respira pela boca. Isso é assunto do dentista?', r: 'É, e dos mais importantes. A respiração bucal altera o crescimento facial, a posição dos dentes e a qualidade do sono.' }
+		]
+	},
+	{
+		slug: 'frenectomia-a-laser',
+		nome: 'Frenectomia a laser',
+		grupo: 'prevencao',
+		icone: 'brilho',
+		resumo: 'Correção de língua e lábio presos com laser, em procedimento minimamente invasivo — de recém-nascidos a adultos.',
+		destaque: true,
+		lead: 'Língua presa não é detalhe: ela atrapalha a pega do bebê no peito, a fala da criança e o funcionamento da boca do adulto. A frenectomia a laser corrige o freio com o mínimo de trauma possível.',
+		blocos: [
+			{
+				titulo: 'Por que o laser muda o procedimento',
+				texto: 'A técnica a laser dispensa pontos na maioria dos casos, reduz sangramento e desconforto, e permite que o bebê volte a mamar logo em seguida. É a diferença entre um procedimento temido e um procedimento rápido e tranquilo.'
+			},
+			{
+				titulo: 'Avaliar antes de indicar',
+				texto: 'Nem todo freio curto precisa de cirurgia. A indicação vem da função: como o bebê mama, como a criança fala, como a língua se movimenta. Avaliamos com o protocolo adequado e, quando faz sentido, em conjunto com fonoaudiologia e consultoria de amamentação.'
+			}
+		],
+		indicacoes: [
+			'Bebê com dificuldade de pega, mamadas longas ou dor na amamentação',
+			'Língua que não alcança o céu da boca ou não ultrapassa os lábios',
+			'Alterações de fala associadas à mobilidade da língua',
+			'Freio labial que afasta os dentes da frente',
+			'Adultos com limitação de movimento da língua'
+		],
+		etapas: [
+			{ titulo: 'Avaliação funcional', texto: 'Exame do freio, da mobilidade da língua e, em bebês, da mamada — com o protocolo indicado para a idade.' },
+			{ titulo: 'Indicação', texto: 'A conduta é definida pela função, não só pela aparência do freio. Se não houver indicação, dizemos isso com clareza.' },
+			{ titulo: 'Procedimento', texto: 'Liberação com laser, anestesia adequada à idade e, na maioria dos casos, sem pontos.' },
+			{ titulo: 'Acompanhamento', texto: 'Exercícios orientados e retorno para conferir a cicatrização e o ganho de movimento.' }
+		],
+		faq: [
+			{ p: 'Meu bebê pode mamar logo depois?', r: 'Sim. Na maior parte dos casos a amamentação é retomada logo após o procedimento, e isso faz parte do próprio pós-operatório.' },
+			{ p: 'Precisa de pontos?', r: 'Com o laser, na maioria dos casos não. Isso depende da extensão da liberação e é conversado antes.' },
+			{ p: 'Qual a melhor idade?', r: 'Quando há indicação funcional, quanto antes melhor — mas não existe idade limite: adultos também se beneficiam.' }
 		]
 	},
 	{
@@ -210,6 +248,10 @@ export const especialidades = [
 				texto: 'Tomografia, análise óssea, escolha do sistema, cirurgia e prótese acontecem dentro do mesmo instituto e da mesma lógica de tratamento. Você não é encaminhado de um lugar para outro no meio do caso.'
 			},
 			{
+				titulo: 'Implantes de zircônia',
+				texto: 'Além do titânio, trabalhamos com implantes de zircônia — cerâmica branca, sem metal, com boa resposta do tecido gengival e sem risco de borda acinzentada aparecendo na gengiva com o tempo. É a escolha de quem busca reabilitação metal free ou tem sensibilidade a metais.'
+			},
+			{
 				titulo: 'Perder osso é perder rosto',
 				texto: 'A ausência de um dente leva o osso a reabsorver e altera o suporte dos tecidos da face. É por isso que tratamos a reposição como assunto funcional e estético ao mesmo tempo.'
 			}
@@ -219,7 +261,8 @@ export const especialidades = [
 			'Próteses removíveis que incomodam ou soltam',
 			'Dentes com prognóstico ruim, sem possibilidade de manutenção',
 			'Reabilitações totais de arcada',
-			'Casos que exigem enxerto ou levantamento de seio maxilar'
+			'Casos que exigem enxerto ou levantamento de seio maxilar',
+			'Preferência por reabilitação sem metal, com implantes de zircônia'
 		],
 		etapas: [
 			{ titulo: 'Avaliação e tomografia', texto: 'Estudo do volume ósseo, das estruturas nobres e da posição protética ideal.' },
@@ -230,7 +273,8 @@ export const especialidades = [
 		faq: [
 			{ p: 'Implante dói?', r: 'A cirurgia é feita sob anestesia local e o pós-operatório costuma ser mais tranquilo do que a maioria das pessoas imagina, com orientação e medicação adequadas.' },
 			{ p: 'Quanto tempo leva o tratamento completo?', r: 'Depende da necessidade de enxerto e da resposta óssea individual. O prazo estimado é apresentado no plano de tratamento.' },
-			{ p: 'Fumantes podem colocar implante?', r: 'Podem, mas o tabagismo aumenta o risco de complicações. Isso é discutido abertamente antes de decidir.' }
+			{ p: 'Fumantes podem colocar implante?', r: 'Podem, mas o tabagismo aumenta o risco de complicações. Isso é discutido abertamente antes de decidir.' },
+			{ p: 'Qual a diferença entre titânio e zircônia?', r: 'O titânio tem a maior literatura acumulada; a zircônia é branca, não tem metal e favorece a estética em região anterior. A indicação depende do seu caso, do osso disponível e da sua preferência.' }
 		]
 	},
 	{
@@ -280,7 +324,7 @@ export const especialidades = [
 		blocos: [
 			{
 				titulo: 'Alinhadores ou aparelho fixo?',
-				texto: 'Os dois funcionam — para casos diferentes. Os alinhadores oferecem discrição e higiene mais simples; o aparelho fixo mantém vantagens em movimentações complexas. A escolha vem do diagnóstico, não da moda.'
+				texto: 'Os dois funcionam — para casos diferentes. Os alinhadores oferecem discrição e higiene mais simples, e atendem crianças, adolescentes e adultos; o aparelho fixo mantém vantagens em movimentações complexas. A escolha vem do diagnóstico, não da moda.'
 			},
 			{
 				titulo: 'Ortodontia dentro de um plano maior',
@@ -292,7 +336,8 @@ export const especialidades = [
 			'Mordida cruzada, aberta ou profunda',
 			'Preparo ortodôntico antes de próteses e implantes',
 			'Recidiva após tratamento anterior',
-			'Adultos que desejam tratamento discreto'
+			'Adultos que desejam tratamento discreto',
+			'Crianças em crescimento, com ortopedia funcional e expansores'
 		],
 		etapas: [
 			{ titulo: 'Documentação', texto: 'Radiografias, fotografias, escaneamento e análise facial completa.' },
@@ -322,13 +367,17 @@ export const especialidades = [
 			{
 				titulo: 'Preparo para reabilitação',
 				texto: 'Enxertos ósseos, levantamento de seio maxilar e regularizações preparam o terreno para implantes e próteses com estabilidade.'
+			},
+			{
+				titulo: 'Cirurgias com laser',
+				texto: 'Parte dos procedimentos é feita com laser, que reduz sangramento e desconforto e costuma dispensar pontos. É o caso das frenectomias, que têm página própria por serem procura frequente de mães de recém-nascidos.'
 			}
 		],
 		indicacoes: [
 			'Sisos inclusos ou com pericoronarite de repetição',
 			'Extrações de dentes sem prognóstico',
 			'Enxertos ósseos e levantamento de seio maxilar',
-			'Frenectomias',
+			'Frenectomias lingual e labial, com laser',
 			'Remoção de lesões para biópsia'
 		],
 		etapas: [
@@ -433,6 +482,43 @@ export const especialidades = [
 			{ p: 'Placa de bruxismo resolve?', r: 'Ela protege os dentes e costuma aliviar sintomas, mas é parte do tratamento. Sem investigar a causa, o problema tende a retornar.' },
 			{ p: 'DTM tem cura?', r: 'Muitos casos são controlados de forma consistente. O foco é reduzir dor, recuperar função e evitar novos episódios.' },
 			{ p: 'Minha dor de cabeça pode ser do dente?', r: 'Pode. Dor de cabeça tensional relacionada a apertamento e DTM é frequente e frequentemente não investigada.' }
+		]
+	},
+	{
+		slug: 'odontologia-miofuncional',
+		nome: 'Odontologia miofuncional',
+		grupo: 'integrativa',
+		icone: 'onda',
+		resumo: 'Respiração, mastigação, deglutição e desenvolvimento craniofacial tratados como um sistema só.',
+		destaque: true,
+		lead: 'A boca é musculatura em funcionamento. Quando respiração, mastigação e deglutição saem do eixo, o efeito aparece nos dentes, na face, no sono e na postura — e tratar só o dente não resolve.',
+		blocos: [
+			{
+				titulo: 'O que a musculatura conta',
+				texto: 'Respiração bucal, língua em posição inadequada, deglutição atípica e mastigação de um lado só deixam marcas: mordida aberta, arcada estreita, face alongada, ronco. Ler esses sinais cedo muda o rumo do desenvolvimento de uma criança — e explica recidivas em adultos que já fizeram ortodontia.'
+			},
+			{
+				titulo: 'Trabalho conjunto',
+				texto: 'A abordagem miofuncional conversa com ortodontia, ortopedia funcional dos maxilares, fonoaudiologia e otorrinolaringologia. No IOIS isso acontece dentro do mesmo plano de tratamento, e não em encaminhamentos soltos.'
+			}
+		],
+		indicacoes: [
+			'Respiração pela boca, roncos ou sono agitado',
+			'Criança com arcada estreita ou mordida aberta',
+			'Deglutição atípica e língua em posição baixa',
+			'Mastigação de um lado só ou dificuldade para mastigar',
+			'Recidiva ortodôntica sem causa aparente'
+		],
+		etapas: [
+			{ titulo: 'Avaliação funcional', texto: 'Análise de respiração, postura da língua, deglutição, mastigação e desenvolvimento facial.' },
+			{ titulo: 'Diagnóstico integrado', texto: 'Cruzamento com o exame odontológico, a oclusão e, quando indicado, avaliação médica.' },
+			{ titulo: 'Plano terapêutico', texto: 'Aparelhos ortopédicos, exercícios e o encaminhamento certo, na ordem certa.' },
+			{ titulo: 'Acompanhamento', texto: 'Reavaliações ao longo do crescimento ou do tratamento, porque função se acompanha.' }
+		],
+		faq: [
+			{ p: 'A partir de que idade dá para avaliar?', r: 'Desde os primeiros anos. Quanto mais cedo, mais o crescimento trabalha a favor do tratamento.' },
+			{ p: 'Isso substitui a ortodontia?', r: 'Não. Trabalha junto: a ortodontia posiciona os dentes, e a abordagem miofuncional cuida da função que sustenta esse resultado.' },
+			{ p: 'Adulto também se beneficia?', r: 'Sim, principalmente em casos de DTM, ronco e recidiva ortodôntica.' }
 		]
 	},
 	{

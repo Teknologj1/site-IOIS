@@ -64,7 +64,24 @@ const paginas = [
 			worksFor: { '@type': 'Dentist', name: site.nome },
 			url: `${site.dominio}/dra-iolanda.html`,
 			image: `${site.dominio}/assets/img/iolanda-retrato.jpg`,
-			sameAs: [site.instagramIolanda.url, site.instagram.url]
+			sameAs: [site.instagramIolanda.url, site.instagram.url],
+			hasCredential: {
+				'@type': 'EducationalOccupationalCredential',
+				credentialCategory: 'Especialização',
+				name: 'Especialista em Prótese Dentária'
+			},
+			knowsAbout: [
+				'Odontologia integrativa',
+				'Prótese dentária',
+				'Implantodontia',
+				'Implantes de zircônia',
+				'Harmonização orofacial',
+				'Odontologia miofuncional',
+				'Frenectomia a laser',
+				'Ortopedia funcional dos maxilares',
+				'Laserterapia odontológica',
+				'Sedação inalatória com óxido nitroso'
+			]
 		}
 	},
 	{
