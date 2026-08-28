@@ -3,7 +3,10 @@
 # ==========================================================================
 
 Options -Indexes
-DirectoryIndex index.html index.php
+
+# Só o index.html do repositório serve como página inicial. Sem "index.php" nesta
+# lista, um arquivo de índice remanescente de um site anterior não assume a raiz.
+DirectoryIndex index.html
 
 # --------------------------------------------------------------------------
 #  Páginas de erro
@@ -24,6 +27,10 @@ ErrorDocument 404 /404.html
 	# www → domínio raiz
 	RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
 	RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+	# A raiz do domínio serve sempre a home deste repositório, mesmo que sobre
+	# algum arquivo de índice de um site anterior na pasta
+	RewriteRule ^$ index.html [L]
 
 	# /pagina  →  /pagina.html  (sem redirecionar: a URL com .html continua válida)
 	RewriteCond %{REQUEST_FILENAME} !-f

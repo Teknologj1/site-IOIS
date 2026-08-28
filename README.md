@@ -83,6 +83,23 @@ O site é publicado por `git pull`: **todo push no branch escolhido atualiza o s
 A partir daí: `git push` → o webhook dispara → a Hostinger atualiza a `public_html`.
 Para publicar manualmente, use o botão **Deploy** na mesma tela.
 
+### Se o domínio abrir um site antigo em vez deste
+
+O `git pull` **adiciona e atualiza** arquivos, mas não apaga o que já existia na
+`public_html`. Se sobrar um `index.php` (ou outro arquivo de índice) de um site
+anterior, o servidor pode servi-lo na raiz do domínio, e este site só responderia em
+`/index.html`.
+
+O `.htaccess` deste repositório já força a raiz para o `index.html` — mas a solução
+definitiva é limpar a pasta:
+
+1. hPanel → **Arquivos → Gerenciador de Arquivos** → `public_html`
+2. Faça backup do que quiser guardar.
+3. Apague tudo o que **não** vem deste repositório — principalmente `index.php`,
+   pastas de assets antigas e qualquer `.html` que não esteja na lista de páginas
+   acima. Mantenha `.git`, `.htaccess` e os arquivos do repositório.
+4. hPanel → Git → **Deploy** para reinstalar tudo do zero.
+
 ---
 
 ## Formulário de contato
