@@ -111,7 +111,7 @@ ${capa({
 			<p class="mt-2"><a class="btn btn-ouro" href="${site.endereco.mapa}" target="_blank" rel="noopener">${icone('local')} Ver no mapa</a></p>
 		</div>
 		<div class="moldura-img revelar" style="--atraso:.1s">
-			\${foto({ arquivo: 'atendimento-detalhe.jpg', alt: 'Equipe do Instituto IOIS durante um atendimento', largura: 1080, altura: 810, sizes: '(max-width: 62rem) 92vw, 34rem' })}
+			${foto({ arquivo: 'atendimento-detalhe.jpg', alt: 'Equipe do Instituto IOIS durante um atendimento', largura: 1080, altura: 810, sizes: '(max-width: 62rem) 92vw, 34rem' })}
 		</div>
 	</div>
 </section>
@@ -119,7 +119,7 @@ ${capa({
 <section class="secao">
 	<div class="wrap grid cols-2" style="align-items:center">
 		<div class="moldura-img revelar">
-			\${foto({ arquivo: 'equipe-iois.jpg', alt: 'Equipe do Instituto IOIS discutindo um caso clínico', largura: 1080, altura: 810, sizes: '(max-width: 62rem) 92vw, 34rem' })}
+			${foto({ arquivo: 'equipe-iois.jpg', alt: 'Equipe do Instituto IOIS discutindo um caso clínico', largura: 1080, altura: 810, sizes: '(max-width: 62rem) 92vw, 34rem' })}
 		</div>
 		<div class="revelar" style="--atraso:.1s">
 			<p class="eyebrow">Equipe</p>
@@ -154,7 +154,7 @@ ${capa({
 	<div class="wrap grid cols-2" style="align-items:center">
 		<div class="retrato-moldura revelar" style="max-width:26rem">
 			<figure class="retrato">
-				\${foto({ arquivo: 'iolanda-pagina.jpg', alt: 'Dra. Iolanda Schroeder, responsável técnica do Instituto IOIS', largura: 1200, altura: 1500, sizes: '(max-width: 62rem) 92vw, 26rem' })}
+				${foto({ arquivo: 'iolanda-pagina.jpg', alt: 'Dra. Iolanda Schroeder, responsável técnica do Instituto IOIS', largura: 1200, altura: 1500, sizes: '(max-width: 62rem) 92vw, 26rem' })}
 			</figure>
 		</div>
 		<div class="revelar" style="--atraso:.08s">
@@ -219,7 +219,7 @@ ${capa({
 			<p class="mt-2"><a class="btn btn-primario" href="/cursos.html">Conhecer os cursos ${icone('seta')}</a></p>
 		</div>
 		<div class="moldura-img revelar" style="--atraso:.08s;max-width:26rem;margin-inline:auto">
-			\${foto({ arquivo: 'iolanda-estudio.jpg', alt: 'Dra. Iolanda Schroeder', largura: 900, altura: 1125, sizes: '(max-width: 62rem) 92vw, 26rem', estilo: 'width:100%' })}
+			${foto({ arquivo: 'iolanda-estudio.jpg', alt: 'Dra. Iolanda Schroeder', largura: 900, altura: 1125, sizes: '(max-width: 62rem) 92vw, 26rem', estilo: 'width:100%' })}
 		</div>
 	</div>
 </section>

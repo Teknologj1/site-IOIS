@@ -10,11 +10,21 @@ import { fileURLToPath } from 'node:url';
 const raiz = join(dirname(fileURLToPath(import.meta.url)), '..');
 const pasta = join(raiz, 'assets/img');
 const LARGURAS = [480, 900];
+/* Só estas larguras contam como variante gerada — um nome como "post-1.jpg"
+   não pode ser confundido com um arquivo derivado. */
+const padraoVariante = new RegExp(`-(${LARGURAS.join('|')})\\.jpg$`, 'i');
 
-/* Só as fotos grandes: logo, ícones e miniaturas ficam de fora */
-const fotos = readdirSync(pasta).filter(
-	(f) => /\.jpg$/i.test(f) && !/-\d+\.jpg$/i.test(f)
-);
+/* Todas as fotos, inclusive as das subpastas (ig/, casos/).
+   Logo e ícones são PNG, então ficam naturalmente de fora. */
+const listar = (dir, prefixo = '') =>
+	readdirSync(dir, { withFileTypes: true }).flatMap((item) =>
+		item.isDirectory()
+			? listar(join(dir, item.name), `${prefixo}${item.name}/`)
+			: /\.jpg$/i.test(item.name) && !padraoVariante.test(item.name)
+				? [`${prefixo}${item.name}`]
+				: []
+	);
+const fotos = listar(pasta);
 
 const navegador = await chromium.launch();
 const p = await navegador.newPage();
@@ -49,7 +59,7 @@ for (const arquivo of fotos) {
 	});
 
 	console.log(
-		`${arquivo.padEnd(28)} ${String(variantes.largura).padStart(5)}px `
+		`${arquivo.padEnd(30)} ${String(variantes.largura).padStart(5)}px `
 		+ (geradas.length ? `→ ${geradas.join(' · ')}` : '(já pequena)')
 	);
 }

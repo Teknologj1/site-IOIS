@@ -73,7 +73,7 @@ ${e.imagem
 	? `<section class="secao-topo">
 	<div class="wrap">
 		<figure class="moldura-img revelar" style="max-width:56rem;margin-inline:auto">
-			\${foto({ ...e.imagem, sizes: '(max-width: 62rem) 92vw, 56rem' })}
+			${foto({ ...e.imagem, sizes: '(max-width: 62rem) 92vw, 56rem' })}
 		</figure>
 	</div>
 </section>`

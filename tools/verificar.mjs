@@ -28,6 +28,22 @@ for (const arquivo of arquivos) {
 		const alvo = m[1] === '/' ? '/index.html' : m[1];
 		if (!existsSync(join(raiz, alvo))) problemas.push(`${rel}: alvo inexistente ${alvo}`);
 	}
+
+	/* Todas as larguras declaradas no srcset precisam existir em disco */
+	for (const m of html.matchAll(/srcset="([^"]+)"/g)) {
+		for (const item of m[1].split(',')) {
+			const alvo = item.trim().split(/\s+/)[0];
+			if (alvo.startsWith('/') && !existsSync(join(raiz, alvo))) {
+				problemas.push(`${rel}: srcset aponta para arquivo inexistente ${alvo}`);
+			}
+		}
+	}
+
+	/* Marcador de modelo que não foi interpolado — acontece quando o cifrão
+	   é escapado por engano na literal de template. */
+	for (const m of html.matchAll(/\$\{[^}]{0,80}/g)) {
+		problemas.push(`${rel}: modelo não interpolado → ${m[0].slice(0, 60)}`);
+	}
 	for (const m of html.matchAll(/<img\b(?![^>]*\balt=)[^>]*>/g)) problemas.push(`${rel}: <img> sem alt → ${m[0].slice(0, 70)}`);
 	for (const m of html.matchAll(/<img\b(?![^>]*\bwidth=)[^>]*>/g)) problemas.push(`${rel}: <img> sem width/height → ${m[0].slice(0, 70)}`);
 	if (!/<title>[^<]{10,70}<\/title>/.test(html)) problemas.push(`${rel}: título ausente ou fora de 10–70 caracteres`);

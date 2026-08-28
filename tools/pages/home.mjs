@@ -28,7 +28,7 @@ const jornada = [
 	{ titulo: 'Acompanhamento', texto: 'Tratamento executado por etapas, com retornos programados e manutenção — porque resultado que não é acompanhado não se mantém.' }
 ];
 
-const posts = [1, 2, 3, 4, 5, 6, 8, 9, 10];
+const posts = [1, 2, 3, 4, 5, 6, 7, 8];
 
 export const home = () => `
 <section class="hero grao">
@@ -245,7 +245,7 @@ export const home = () => `
 		<div class="cabecalho-secao centro revelar">
 			<p class="eyebrow">${site.instagram.usuario}</p>
 			<h2>O dia a dia do instituto.</h2>
-			<p class="lead">Bastidores, orientação de saúde bucal e casos publicados com autorização.</p>
+			<p class="lead">A equipe, os bastidores e o cuidado que praticamos todos os dias — e que você acompanha de perto no Instagram.</p>
 			<p class="mt-2"><a class="btn btn-primario" href="${site.instagram.url}" target="_blank" rel="noopener">${icone('instagram')} Seguir no Instagram</a></p>
 		</div>
 	</div>
@@ -255,8 +255,13 @@ export const home = () => `
 				.map(() =>
 					posts
 						.map(
-							(n) => `<a class="ig-item" href="${site.instagram.url}" target="_blank" rel="noopener" aria-label="Ver publicação no Instagram do Instituto IOIS">
-					<img src="/assets/img/ig/post-${n}.jpg" width="292" height="365" alt="Publicação do Instituto IOIS no Instagram" loading="lazy" decoding="async">
+							(n) => `<a class="ig-item" href="${site.instagram.url}" target="_blank" rel="noopener" aria-label="Ver o Instagram do Instituto IOIS">
+					${foto({
+						arquivo: `ig/post-${n}.jpg`,
+						alt: 'Dia a dia do Instituto IOIS',
+						largura: 560, altura: 700,
+						sizes: '(max-width: 48rem) 42vw, 14rem'
+					})}
 				</a>`
 						)
 						.join('')
