@@ -135,7 +135,7 @@ export const home = () => `
 				.filter((e) => !destaques.slice(0, 8).includes(e))
 				.map(
 					(e) =>
-						`<a class="pilula" href="${e.destaque ? `/especialidades/${e.slug}.html` : '/especialidades.html#' + e.slug}">${icone('check')} ${e.nome}</a>`
+						`<a class="pilula" href="${e.destaque ? `/especialidades/${e.slug}.html` : '/especialidades.html#' + e.slug}">${e.nome}</a>`
 				)
 				.join('\n\t\t\t')}
 		</div>
