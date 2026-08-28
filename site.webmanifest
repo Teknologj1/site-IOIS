@@ -8,6 +8,7 @@
 	"theme_color": "#0b0a0f",
 	"lang": "pt-BR",
 	"icons": [
-		{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+		{ "src": "/favicon.png", "sizes": "96x96", "type": "image/png", "purpose": "any" },
+		{ "src": "/assets/img/apple-touch-icon.png", "sizes": "180x180", "type": "image/png", "purpose": "any" }
 	]
 }

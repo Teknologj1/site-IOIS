@@ -4,13 +4,11 @@ import { icone } from './icones.mjs';
 /* ---------------------------------------------------------------------
    Marca
    --------------------------------------------------------------------- */
-export const logo = (titulo = site.nome) => `
-<svg viewBox="8 0 123 76" role="img" aria-label="${titulo}">
-	<text class="logo-i" x="20" y="60" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="68" font-weight="500">I</text>
-	<ellipse class="logo-o" cx="53" cy="38" rx="19" ry="21.5" transform="rotate(-14 53 38)"/>
-	<text class="logo-i" x="87" y="60" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="68" font-weight="500">I</text>
-	<text class="logo-s" x="114" y="60" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="68" font-weight="500">S</text>
-</svg>`;
+export const logo = (titulo = site.nome, altura = 46) => {
+	const larg = Math.round((altura * 1824) / 650); /* proporção da arte original */
+	return `<img class="logo-marca" src="/assets/img/logo-iois.png" alt="${titulo}" width="${larg}" height="${altura}">
+				<img class="logo-marca logo-claro" src="/assets/img/logo-iois-claro.png" alt="" aria-hidden="true" width="${larg}" height="${altura}">`;
+};
 
 /* ---------------------------------------------------------------------
    Cabeçalho
@@ -20,7 +18,6 @@ const cabecalho = (ativo, heroEscuro) => `
 		<div class="wrap cabecalho-inner">
 			<a class="marca" href="/" aria-label="${site.nome} — página inicial">
 				${logo()}
-				<span class="logo-nome">Odontologia<br>Integrativa</span>
 			</a>
 			<nav class="menu" aria-label="Menu principal">
 				${menu.map((i) => `<a href="${i.href}"${i.id === ativo ? ' aria-current="page"' : ''}>${i.rotulo}</a>`).join('\n\t\t\t\t')}
@@ -54,7 +51,7 @@ const rodape = (especialidadesDestaque = []) => `
 		<div class="wrap">
 			<div class="rodape-grid">
 				<div class="rodape-sobre">
-					<a class="marca" href="/" aria-label="${site.nome}">${logo()}</a>
+					<a class="marca" href="/" aria-label="${site.nome}">${logo(site.nome, 58)}</a>
 					<p class="rodape-razao">${site.nomeCompleto}</p>
 					<p>Odontologia integrativa em ${site.cidade}: cuidamos da saúde bucal reconhecendo sua conexão com o corpo inteiro — com todas as especialidades sob o mesmo teto.</p>
 					<div class="redes">
@@ -105,7 +102,7 @@ const dadosDaClinica = {
 	alternateName: ['IOIS', site.nomeCompleto],
 	description: site.descricao,
 	url: site.dominio,
-	logo: `${site.dominio}/assets/img/logo-iois.svg`,
+	logo: `${site.dominio}/assets/img/logo-iois.png`,
 	image: `${site.dominio}/assets/img/og-iois.png`,
 	telephone: `+${site.telefone.numero}`,
 	email: site.email,
@@ -167,7 +164,7 @@ export const pagina = ({
 <meta property="og:image" content="${site.dominio}${imagem}">
 <meta name="twitter:card" content="summary_large_image">
 
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.png" type="image/png" sizes="96x96">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 
