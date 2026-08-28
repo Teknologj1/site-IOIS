@@ -16,7 +16,7 @@ ${capa({
 ${grupos
 	.map(
 		(g, gi) => `
-<section class="secao${gi % 2 === 1 ? '' : ''}"${gi % 2 === 1 ? ' style="background:var(--lilas-50)"' : ''}>
+<section class="secao${gi % 2 === 1 ? '' : ''}"${gi % 2 === 1 ? ' style="background:var(--areia-50)"' : ''}>
 	<div class="wrap">
 		<div class="cabecalho-secao revelar">
 			<p class="eyebrow">${String(gi + 1).padStart(2, '0')} · ${g.nome}</p>
@@ -103,7 +103,7 @@ ${e.imagem
 	</div>
 </section>
 
-<section class="secao" style="background:var(--lilas-50)">
+<section class="secao" style="background:var(--areia-50)">
 	<div class="wrap">
 		<div class="cabecalho-secao revelar">
 			<p class="eyebrow">Como conduzimos</p>

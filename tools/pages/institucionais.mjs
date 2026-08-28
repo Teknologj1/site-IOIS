@@ -63,7 +63,7 @@ ${capa({
 	</div>
 </section>
 
-<section class="secao" style="background:var(--lilas-50);padding-block:clamp(3rem,6vw,5rem)">
+<section class="secao" style="background:var(--areia-50);padding-block:clamp(3rem,6vw,5rem)">
 	<div class="wrap">
 		<div class="stats revelar">
 			<div class="stat"><strong><span data-contador="${site.anos}" data-sufixo="+">${site.anos}+</span></strong><span>anos de prática clínica</span></div>
@@ -134,7 +134,7 @@ ${capa({
 	</div>
 </section>
 
-<section class="secao" style="background:var(--lilas-50)">
+<section class="secao" style="background:var(--areia-50)">
 	<div class="wrap centro">
 		<h2 class="revelar">Conheça o instituto de perto.</h2>
 		<p class="lead revelar mt-1" style="max-width:38rem;margin-inline:auto">Agende uma avaliação e entenda o seu caso por inteiro, sem compromisso de fechar tratamento na hora.</p>
@@ -181,7 +181,7 @@ ${capa({
 	</div>
 </section>
 
-<section class="secao" style="background:var(--lilas-50)">
+<section class="secao" style="background:var(--areia-50)">
 	<div class="wrap">
 		<div class="cabecalho-secao revelar">
 			<p class="eyebrow">Formação e atuação</p>

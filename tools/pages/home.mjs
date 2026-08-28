@@ -107,7 +107,7 @@ export const home = () => `
 	</div>
 </section>
 
-<section class="secao" style="background:var(--lilas-50)">
+<section class="secao" style="background:var(--areia-50)">
 	<div class="wrap">
 		<div class="cabecalho-secao revelar">
 			<p class="eyebrow">Especialidades</p>

@@ -1,6 +1,8 @@
 /* ==========================================================================
    Instituto IOIS — folha de estilo principal
-   Paleta: branco · preto · lilás · roxo · dourado
+   Paleta: a marca (roxo e lilás) vem do logo; a base neutra (creme, terracota
+   e caramelo) vem das artes do Instagram @institutoiois, para que o feed e o
+   site pareçam da mesma casa.
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -17,17 +19,17 @@
 	--roxo-deep: #2e0b47;
 
 	--lilas: #c9a6e4;
-	--lilas-200: #e4d2f2;
-	--lilas-50: #f7f1fc;
+	--areia-200: #e8d8c8;
+	--areia-50: #f7f0e8;
 
-	--ouro: #c8a24c;
-	--ouro-soft: #e4ce97;
-	--ouro-ink: #8a6b22;
+	--ouro: #c08a5c;
+	--ouro-soft: #e0bb92;
+	--ouro-ink: #9c5a52;
 
 	--branco: #ffffff;
-	--osso: #faf8fc;
-	--cinza: #6e6878;
-	--cinza-linha: #e9e4ef;
+	--osso: #faf5ee;
+	--cinza: #6b6258;
+	--cinza-linha: #ece2d6;
 
 	/* Papéis */
 	--bg: var(--branco);
@@ -59,8 +61,8 @@
 	--r-lg: 1.75rem;
 	--r-arco: 14rem 14rem 1.25rem 1.25rem;
 
-	--sombra-suave: 0 1.25rem 3.5rem -1.5rem rgba(46, 11, 71, 0.28);
-	--sombra-forte: 0 2.5rem 5rem -1.75rem rgba(46, 11, 71, 0.45);
+	--sombra-suave: 0 1.25rem 3.5rem -1.5rem rgba(74, 44, 30, 0.22);
+	--sombra-forte: 0 2.5rem 5rem -1.75rem rgba(74, 44, 30, 0.36);
 
 	--transicao: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -607,7 +609,7 @@ p { text-wrap: pretty; }
 	transform-origin: left;
 	transition: transform var(--transicao);
 }
-.cartao:hover { transform: translateY(-4px); box-shadow: var(--sombra-suave); border-color: var(--lilas-200); }
+.cartao:hover { transform: translateY(-4px); box-shadow: var(--sombra-suave); border-color: var(--areia-200); }
 .cartao:hover::before { transform: scaleX(1); }
 .cartao h3 { margin-bottom: 0.6rem; }
 .cartao p { color: var(--texto-suave); font-size: var(--t-pequeno); line-height: 1.7; }
@@ -624,7 +626,7 @@ a.cartao { display: block; }
 	width: 3rem;
 	height: 3rem;
 	border-radius: 0.85rem;
-	background: linear-gradient(140deg, var(--lilas-50), var(--lilas-200));
+	background: linear-gradient(140deg, var(--areia-50), var(--areia-200));
 	color: var(--roxo);
 	margin-bottom: 1.35rem;
 	transition: background var(--transicao), color var(--transicao);
@@ -640,7 +642,7 @@ a.cartao { display: block; }
 	font-feature-settings: 'lnum' 1;
 	font-size: 3rem;
 	line-height: 1;
-	color: var(--lilas-200);
+	color: var(--areia-200);
 	margin-bottom: 1rem;
 	display: block;
 }
@@ -684,7 +686,7 @@ a.cartao { display: block; }
 	color: var(--texto-suave);
 	transition: all var(--transicao);
 }
-.pilula:hover { border-color: var(--roxo); color: var(--roxo); background: var(--lilas-50); }
+.pilula:hover { border-color: var(--roxo); color: var(--roxo); background: var(--areia-50); }
 .escuro .pilula:hover { background: rgba(201, 166, 228, 0.12); color: var(--lilas); border-color: rgba(201, 166, 228, 0.5); }
 
 /* Números */
@@ -724,7 +726,7 @@ a.cartao { display: block; }
    -------------------------------------------------------------------------- */
 .faixa {
 	border-block: 1px solid var(--borda);
-	background: var(--lilas-50);
+	background: var(--areia-50);
 	overflow: hidden;
 	padding-block: 1.15rem;
 	--velocidade: 42s;
